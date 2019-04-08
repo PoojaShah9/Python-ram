@@ -1,0 +1,7 @@
+ourservices {
+  padding: 100px;
+//height: 700px;
+}
+.datatable-row-detail {
+  overflow-y: unset !important;
+}

@@ -1,0 +1,26 @@
+<div>
+  <section class="ourservices" style="padding:50px;">
+<h3>Main Data</h3>
+    <button class="btn btn-primary" [routerLink]="['/ques']">Remove Duplicate</button>
+<table style="width: 70%;" class="table">
+  <thead>
+  <tr class="text-centre">
+    <th>No</th>
+    <th >Address</th>
+    <th >City</th>
+    <th >Cuisine</th>
+    <th >Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let a of datas; let i = index;">
+    <td>{{i + 1}}</td>
+    <td>{{a.address}}</td>
+    <td>{{a.city}}</td>
+    <td>{{ a.cuisine }}</td>
+    <td>{{ a.name}}</td>
+  </tr>
+  </tbody>
+</table>
+  </section>
+</div>

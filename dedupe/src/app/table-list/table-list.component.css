@@ -1,0 +1,13 @@
+.ourservices {
+  padding: 100px 0px 60px;
+//height: 700px;
+}
+.datatable-row-detail {
+  overflow-y: unset !important;
+}
+.table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
+}

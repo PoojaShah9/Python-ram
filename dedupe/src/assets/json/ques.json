@@ -1,0 +1,18 @@
+{
+  "result": [
+    {
+      "address": "23725 w. malibu rd.",
+      "city": "malibu",
+      "cuisine": "californian",
+      "name": "granita",
+      "unique_id": "17"
+    },
+    {
+      "address": "23725 w. malibu rd.",
+      "city": "malibu",
+      "cuisine": "californian",
+      "name": "granita",
+      "unique_id": "18"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<div>
+  <section class="ourservices" style="padding:50px;">
+    <div>
+      <h4>Total Matched Records : {{this.matchData.match.length}} / 5</h4>
+      <h4>Total Distinct Records : {{this.matchData.distinct.length}} / 5</h4>
+      <button class="btn btn-danger" *ngIf="this.matchData.match.length > 4 && this.matchData.distinct.length >4" (click)="terminateData()">Terminate</button>
+
+    </div>
+  <h3> Are the below record similar or not?</h3>
+<table style="width: 50%;" class="row-border hover table">
+  <thead>
+    <tr>
+      <th class="text-centre">Address</th>
+      <th class="text-centre">City</th>
+      <th class="text-centre">Cuisine</th>
+      <th class="text-centre">Name</th>
+      <th class="text-centre">Unique_Id</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let b of value">
+    <td>{{b.address}}</td>
+    <td>{{b.city}}</td>
+    <td>{{b.cuisine}}</td>
+    <td>{{b.name}}</td>
+    <td>{{b.unique_id}}</td>
+  </tr>
+  </tbody>
+</table>
+    <button class="btn btn-primary" (click)="setAnswer('y',value)">Yes</button>
+    <button class="btn btn-cancel" (click)="setAnswer('n',value)">No</button>
+    <button class="btn btn-info" (click)="setAnswer('na',value)">Not Sure</button>
+  </section>
+</div>

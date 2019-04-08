@@ -10,6 +10,8 @@ export class QuesComponent implements OnInit {
   value:any = [];
   matchData:any ={};
   index = 1;
+  showQuestions = true;
+  finaldata:any = [];
   constructor(public TableService:TableService) {}
 
 
@@ -32,14 +34,22 @@ export class QuesComponent implements OnInit {
   setAnswer(value, data){
     this.index += 1
     if(value === 'y'){
+      //this.matchData.match.push(Object.assign({}, data));
       this.matchData.match.push(data);
     }else if(value === 'n'){
       this.matchData.distinct.push(data);
     }
+    this.getAllQues()
   }
 
   terminateData(){
-    console.log('final Records' , JSON.stringify(this.matchData));
+    let final = {'final' : this.matchData}
+    //console.log('final Records' , JSON.stringify(this.matchData));
+    this.showQuestions = false;
+    this.TableService.postMatchData(final).subscribe(final=>{
+      this.finaldata = final.result;
+    })
+
   }
 
 

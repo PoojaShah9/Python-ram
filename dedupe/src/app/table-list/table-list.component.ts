@@ -18,7 +18,10 @@ export class TableListComponent implements OnInit {
     getdata(){
     this.TableService.getAlldata().subscribe(data=>{
       console.log(data,'data');
-      this.datas = data.result;
+      let d = data.result;
+    //  d= d.replace('\\','');
+      console.log("fgfdg", d);
+      this.datas = d;
     },
       error1 => {
         console.log('error', error1);

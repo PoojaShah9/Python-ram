@@ -10,9 +10,12 @@ export class TableService {
   }
   getAlldata(){
     // return data;
-    return this.http.get<any>('assets/json/data.json');
+    return this.http.get<any>('http://127.0.0.1:5000/getcsv');
   }
   getQues(){
-    return this.http.get<any>('assets/json/ques.json');
+    return this.http.get<any>('http://127.0.0.1:5000/getquestions');
+  }
+  postMatchData(data){
+    return this.http.post<any>('http://127.0.0.1:5000/getnewcsv',data);
   }
 }

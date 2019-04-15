@@ -33,7 +33,7 @@ def firstcall():
   deduper = dedupe.Dedupe(variables)
   deduper.sample(data_d, 150000, .5)
 
-  return deduper
+  return [deduper,data_d]
 
 def preProcess(column):
 
@@ -64,7 +64,7 @@ def firstprogram():
     import dedupe
     # 1
 
-    deduper = firstcall()
+    deduper = firstcall()[0]
     pair = deduper.uncertainPairs()
     return jsonify({'result' : pair[0]})
 
@@ -72,7 +72,8 @@ def secondprogram(jsonfile):
 
     #2
     import dedupe
-    deduper = firstcall()
+    deduper = firstcall()[0]
+    data_d = firstcall()[1]
     newinputs = jsonfile
     newJson = {'distinct':[],'match':[]}
     for dist in enumerate(newinputs['distinct']):

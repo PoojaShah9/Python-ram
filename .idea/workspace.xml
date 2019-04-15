@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3390c15-05a2-477a-8320-005443fd5662" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dedupe/server/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/dedupe/server/controller.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,17 +19,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dedupe/server/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-end-line="32" selection-end-column="37" />
+            <state relative-caret-position="15">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dedupe/server/controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dedupe/src/start.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dedupe/server/controller.py">
+        <entry file="file://$PROJECT_DIR$/dedupe/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="75">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+              <folding>
+                <element signature="n#!!block;n#dependencies#0;n#!!top" />
+                <element signature="n#!!block;n#devDependencies#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,6 +70,11 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Pooja Shah &lt;shah.developer9@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -67,7 +95,10 @@
         <option value="$PROJECT_DIR$/dedupe/src/app/table.service.ts" />
         <option value="$PROJECT_DIR$/dedupe/src/app/ques/ques.component.ts" />
         <option value="$PROJECT_DIR$/dedupe/src/app/ques/ques.component.html" />
+        <option value="$PROJECT_DIR$/dedupe/server/index.py" />
         <option value="$PROJECT_DIR$/dedupe/server/controller.py" />
+        <option value="$PROJECT_DIR$/dedupe/src/start.sh" />
+        <option value="$PROJECT_DIR$/dedupe/package.json" />
       </list>
     </option>
   </component>
@@ -83,7 +114,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -96,23 +126,11 @@
               <item name="Python-ram" type="462c0819:PsiDirectoryNode" />
               <item name="dedupe" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Python-ram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-ram" type="462c0819:PsiDirectoryNode" />
-              <item name="dedupe" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python-ram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-ram" type="462c0819:PsiDirectoryNode" />
-              <item name="dedupe" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="inputfile" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -120,7 +138,7 @@
     <property name="SearchEverywhereHistoryKey" value="main.ts&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/main.ts&#10;table&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/table-list/table-list.component.html&#10;app.m&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;angu&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/angular.json&#10;table.service&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/table.service.ts&#10;app.&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;app&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;angular.js&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/angular.json&#10;package.js&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/package.json&#10;package.json&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dedupe/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -129,6 +147,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/dedupe/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -170,18 +189,27 @@
       <workItem from="1554701407781" duration="4437000" />
       <workItem from="1554715144419" duration="237000" />
       <workItem from="1554716446128" duration="6460000" />
-      <workItem from="1555137206955" duration="3771000" />
+      <workItem from="1555137206955" duration="5727000" />
+      <workItem from="1555304291309" duration="3697000" />
     </task>
+    <task id="LOCAL-00001" summary="Start script for angular">
+      <created>1555305688004</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555305688010</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58462000" />
+    <option name="totallyTimeSpent" value="64115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="25" width="1313" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496124" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2496124" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -191,10 +219,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.27850163" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.47882736" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.6009772" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.048859935" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -264,6 +292,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Start script for angular" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start script for angular" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dedupe/node_modules/ng2-smart-table/ng2-smart-table.component.html" />
     <entry file="file://$PROJECT_DIR$/dedupe/src/app/app.component.css">
@@ -328,9 +360,6 @@
           <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/dedupe/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -439,15 +468,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dedupe/server/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-end-line="32" selection-end-column="37" />
+        <state relative-caret-position="15">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dedupe/server/controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="75">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/src/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!block;n#dependencies#0;n#!!top" />
+            <element signature="n#!!block;n#devDependencies#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

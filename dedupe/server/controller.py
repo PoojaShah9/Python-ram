@@ -16,7 +16,7 @@ import dedupe
 from unidecode import unidecode
 
 filepath = os.getcwd() + '/inputfile/input.csv'
-
+abc = os.path.abspath(os.curdir) + '/inputfile/input.csv'
 input_file = filepath
 
 settings_file = 'myTest_learned_settings'

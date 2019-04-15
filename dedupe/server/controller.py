@@ -20,9 +20,20 @@ input_file = 'input.csv'
 settings_file = 'myTest_learned_settings'
 training_file = 'myTest_training.json'
 
+def firstcall():
 
+  import dedupe
+  data_d = readData(input_file)
 
+  variables = [{'field' : 'name', 'type': 'String'},
+               {'field' : 'address', 'type': 'String'},
+               {'field' : 'city', 'type': 'String', 'has missing':True},
+               {'field' : 'cuisine', 'type': 'String', 'has missing':True}]
 
+  deduper = dedupe.Dedupe(variables)
+  deduper.sample(data_d, 150000, .5)
+
+  return deduper
 
 def preProcess(column):
 
@@ -53,8 +64,7 @@ def firstprogram():
     import dedupe
     # 1
 
-
-
+    deduper = firstcall()
     pair = deduper.uncertainPairs()
     return jsonify({'result' : pair[0]})
 
@@ -62,6 +72,7 @@ def secondprogram(jsonfile):
 
     #2
     import dedupe
+    deduper = firstcall()
     newinputs = jsonfile
     newJson = {'distinct':[],'match':[]}
     for dist in enumerate(newinputs['distinct']):
@@ -147,14 +158,3 @@ def secondprogram(jsonfile):
                 result.append(row)
 
     return (output_file)
-
-
-data_d = readData(input_file)
-
-variables = [{'field' : 'name', 'type': 'String'},
-             {'field' : 'address', 'type': 'String'},
-             {'field' : 'city', 'type': 'String', 'has missing':True},
-             {'field' : 'cuisine', 'type': 'String', 'has missing':True}]
-
-deduper = dedupe.Dedupe(variables)
-deduper.sample(data_d, 150000, .5)

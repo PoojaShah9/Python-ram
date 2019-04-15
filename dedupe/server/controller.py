@@ -15,9 +15,7 @@ now = datetime.datetime.now()
 import dedupe
 from unidecode import unidecode
 
-filepath = os.getcwd() + '/inputfile/input.csv'
-abc = os.path.abspath(os.curdir) + '/inputfile/input.csv'
-input_file = filepath
+input_file = 'input.csv'
 
 settings_file = 'myTest_learned_settings'
 training_file = 'myTest_training.json'

@@ -9,7 +9,7 @@ import json
 
 from elasticsearch import Elasticsearch
 
-from controller import firstprogram,secondprogram
+
 
 from future.builtins import next
 
@@ -36,10 +36,10 @@ if not os.path.exists(filepath):
     os.makedirs(filepath)
 
 s3client = boto3.client('s3',aws_access_key_id='AKIAWQGV4HBLW42U7EUL',aws_secret_access_key='riihGrGkiIGHW0kqKSeBsvEW4M7cS3VpzAJMXSOa')
-s3client.download_file('pythoncsv','example.csv', filepath + '/input.csv')
+s3client.download_file('pythoncsv','example.csv', 'input.csv')
 
 host = 'search-dedupe-n3y3uvp2uoiok2jgubwotjwag4.us-east-1.es.amazonaws.com'
-
+from controller import firstprogram,secondprogram
 
 es = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
@@ -73,7 +73,7 @@ def get_stars():
   output = []
   count = 0;
   header = []
-  with open('inputfile/input.csv') as csvfile:
+  with open('input.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     for row in readCSV:
         if count == 0:

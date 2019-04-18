@@ -23,6 +23,9 @@ now = datetime.datetime.now()
 
 host = 'search-dedupe-n3y3uvp2uoiok2jgubwotjwag4.us-east-1.es.amazonaws.com'
 
+s3 = boto3.resource('s3',aws_access_key_id='AKIAWQGV4HBLW42U7EUL',aws_secret_access_key='riihGrGkiIGHW0kqKSeBsvEW4M7cS3VpzAJMXSOa')
+bucket = s3.Bucket(u'pythoncsv')
+
 inputfile = 'example.csv'
 
 es = Elasticsearch(

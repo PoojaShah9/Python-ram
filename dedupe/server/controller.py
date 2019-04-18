@@ -10,6 +10,7 @@ import optparse
 from numpy import nan
 import datetime
 from elasticsearch import Elasticsearch
+import boto3
 
 import dedupe
 from unidecode import unidecode

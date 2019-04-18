@@ -9,16 +9,30 @@ import logging
 import optparse
 from numpy import nan
 import datetime
-
-now = datetime.datetime.now()
+from elasticsearch import Elasticsearch
 
 import dedupe
 from unidecode import unidecode
 
-input_file = 'input.csv'
+input_file = 'inputfile/input.csv'
 
 settings_file = 'myTest_learned_settings'
 training_file = 'myTest_training.json'
+
+now = datetime.datetime.now()
+
+host = 'search-dedupe-n3y3uvp2uoiok2jgubwotjwag4.us-east-1.es.amazonaws.com'
+
+inputfile = 'example.csv'
+
+es = Elasticsearch(
+    hosts=[{'host': host, 'port': 443}],
+    use_ssl=True,
+    verify_certs=True
+)
+
+
+
 
 def firstcall():
 
@@ -49,13 +63,17 @@ def preProcess(column):
 
 def readData(filename):
 
+    data = []
+    if es.indices.exists(index="inputdata"):
+        res = es.search(index="inputdata", doc_type='data', body={"query": {"match": {"filename" : inputfile}}})
+        data = res['hits']['hits'][0]['_source']['data']
+
     data_d = {}
-    with open(filename) as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
-            row_id = int(row['unique_id'])
-            data_d[row_id] = dict(clean_row)
+    reader = csv.DictReader(data)
+    for row in reader:
+        clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
+        row_id = int(row['unique_id'])
+        data_d[row_id] = dict(clean_row)
 
     return data_d
 
@@ -124,7 +142,8 @@ def secondprogram(jsonfile):
     singleton_id = cluster_id + 1
 
     result = []
-    output_file = 'myTest_output' + str(now.day) + '.csv'
+    out = inputfile.split('.')
+    output_file = 'OP' + out[0] + '.csv'
     with open(output_file, 'w') as f_output:
         writer = csv.writer(f_output)
 

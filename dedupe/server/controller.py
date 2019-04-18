@@ -146,35 +146,35 @@ def secondprogram(jsonfile):
     output_file = 'OP' + out[0] + '.csv'
     with open(output_file, 'w') as f_output:
         writer = csv.writer(f_output)
+        obj = bucket.Object(key=inputfile)
+        response = obj.get()
+        lines = response[u'Body'].read().splitlines()
+        reader = csv.reader(lines)
+        heading_row = next(reader)
+        heading_row.insert(0, 'confidence_score')
+        heading_row.insert(0, 'Cluster ID')
+        canonical_keys = canonical_rep.keys()
+        for key in canonical_keys:
+            heading_row.append('canonical_' + key)
 
-        with open(input_file) as f_input :
-            reader = csv.reader(f_input)
+        writer.writerow(heading_row)
 
-            heading_row = next(reader)
-            heading_row.insert(0, 'confidence_score')
-            heading_row.insert(0, 'Cluster ID')
-            canonical_keys = canonical_rep.keys()
-            for key in canonical_keys:
-                heading_row.append('canonical_' + key)
-
-            writer.writerow(heading_row)
-
-            for row in reader:
-                row_id = int(row[0])
-                if row_id in cluster_membership :
-                    cluster_id = cluster_membership[row_id]["cluster id"]
-                    canonical_rep = cluster_membership[row_id]["canonical representation"]
-                    row.insert(0, cluster_membership[row_id]['confidence'])
-                    row.insert(0, cluster_id)
-                    for key in canonical_keys:
-                        row.append(canonical_rep[key].encode('utf8'))
-                elif row_id not in cluster_notmember :
-                    row.insert(0, None)
-                    row.insert(0, singleton_id)
-                    singleton_id += 1
-                    for key in canonical_keys:
-                        row.append(None)
-                writer.writerow(row)
-                result.append(row)
+        for row in reader:
+            row_id = int(row[0])
+            if row_id in cluster_membership :
+                cluster_id = cluster_membership[row_id]["cluster id"]
+                canonical_rep = cluster_membership[row_id]["canonical representation"]
+                row.insert(0, cluster_membership[row_id]['confidence'])
+                row.insert(0, cluster_id)
+                for key in canonical_keys:
+                    row.append(canonical_rep[key].encode('utf8'))
+            elif row_id not in cluster_notmember :
+                row.insert(0, None)
+                row.insert(0, singleton_id)
+                singleton_id += 1
+                for key in canonical_keys:
+                    row.append(None)
+            writer.writerow(row)
+            result.append(row)
 
     return (output_file)

@@ -60,7 +60,7 @@ def input():
 
 @app.route('/getelastic', methods=['GET'])
 def search():
-    res = es.search(index="csvresult", doc_type='records')
+    res = es.search(index="csvresult")
 
     return jsonify({'result' : res['hits']['hits']})
 
@@ -72,7 +72,7 @@ def get_stars():
   update = 'false'
   id = 'undefined'
   if es.indices.exists(index="inputdata"):
-      res = es.search(index="inputdata", doc_type='data', body={"query": {"match": {"filename" : inputfile}}})
+      res = es.search(index="inputdata", body={"query": {"match": {"filename" : inputfile}}})
       id = res['hits']['hits'][0]['_id'] if (len(res['hits']['hits']) > 0)  else 'undefined'
 
   if id != 'undefined':
@@ -133,7 +133,7 @@ def get_downloadcsv():
     delete = 'false'
     id = 'undefined'
     if es.indices.exists(index="csvresult"):
-        res = es.search(index="csvresult", doc_type='records', body={"query": {"match": {"filename" : inputfile}}})
+        res = es.search(index="csvresult", body={"query": {"match": {"filename" : inputfile}}})
         id = res['hits']['hits'][0]['_id'] if (len(res['hits']['hits']) > 0)  else 'undefined'
 
     if id != 'undefined':

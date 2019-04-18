@@ -65,7 +65,7 @@ def readData(filename):
 
     data = []
     if es.indices.exists(index="inputdata"):
-        res = es.search(index="inputdata", doc_type='data', body={"query": {"match": {"filename" : inputfile}}})
+        res = es.search(index="inputdata", body={"query": {"match": {"filename" : inputfile}}})
         data = res['hits']['hits'][0]['_source']['data']
 
     data_d = {}

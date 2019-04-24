@@ -6,19 +6,21 @@
   <thead>
   <tr class="text-centre">
     <th>No</th>
-    <th >Address</th>
-    <th >City</th>
-    <th >Cuisine</th>
-    <th >Name</th>
+    <th >Gender</th>
+    <th >Description</th>
+    <th >Provider Type</th>
+    <th >First Name</th>
+    <th >Organisation Name</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let a of datas; let i = index;">
     <td>{{i + 1}}</td>
-    <td>{{a.address}}</td>
-    <td>{{a.city}}</td>
-    <td>{{ a.cuisine }}</td>
-    <td>{{ a.name}}</td>
+    <td>{{a.GNDR_SW}}</td>
+    <td>{{a.PROVIDER_TYPE_DESC}}</td>
+    <td>{{ a.PROVIDER_TYPE_CD }}</td>
+    <td>{{ a.FIRST_NAME}}</td>
+    <td>{{ a.ORG_NAME}}</td>
   </tr>
   </tbody>
 </table>

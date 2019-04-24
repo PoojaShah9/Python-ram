@@ -14,19 +14,21 @@
         <div class="panel-body"><table class="row-border hover table">
           <thead>
           <tr>
-            <th class="text-centre">Address</th>
-            <th class="text-centre">City</th>
-            <th class="text-centre">Cuisine</th>
-            <th class="text-centre">Name</th>
+            <th class="text-centre">Gender</th>
+            <th class="text-centre">Description</th>
+            <th class="text-centre">Provider Type</th>
+            <th class="text-centre">First Name</th>
+            <th class="text-centre">Organisation Name</th>
             <th class="text-centre">Unique_Id</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let b of value">
-            <td>{{b.address}}</td>
-            <td>{{b.city}}</td>
-            <td>{{b.cuisine}}</td>
-            <td>{{b.name}}</td>
+            <td>{{b.GNDR_SW}}</td>
+            <td>{{b.PROVIDER_TYPE_DESC}}</td>
+            <td>{{b.PROVIDER_TYPE_CD}}</td>
+            <td>{{b.FIRST_NAME}}</td>
+            <td>{{b.ORG_NAME}}</td>
             <td>{{b.unique_id}}</td>
           </tr>
           </tbody>
@@ -42,19 +44,21 @@
         <th>cluster_id</th>
         <th>confidence_score</th>
         <th>unique_id</th>
-        <th>name</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>cuisine</th>
+        <th>First Name</th>
+        <th>Gender</th>
+        <th>Description</th>
+        <th>Provider Type</th>
+        <th>Organisation Name</th>
         </tr>
         <tr *ngFor="let a of finaldata">
           <td>{{a["Cluster ID"]}}</td>
           <td>{{a["confidence_score"]}}</td>
           <td>{{a["unique_id"]}}</td>
-          <td>{{a["name"]}}</td>
-          <td>{{a["address"]}}</td>
-          <td>{{a["city"]}}</td>
-          <td>{{a["cuisine"]}}</td>
+          <td>{{a["FIRST_NAME"]}}</td>
+          <td>{{a["GNDR_SW"]}}</td>
+          <td>{{a["PROVIDER_TYPE_DESC"]}}</td>
+          <td>{{a["PROVIDER_TYPE_CD"]}}</td>
+          <td>{{a["ORG_NAME"]}}</td>
         </tr>
       </table>
     </div>

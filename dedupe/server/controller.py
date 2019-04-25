@@ -41,32 +41,32 @@ def firstcall():
 
   import dedupe
   data_d = readData(inputfile)
-
-  variables = [{'field' : 'NPI', 'type': 'String'},
-               {'field' : 'PECOS_ASCT_CNTL_ID', 'type': 'String'},
-               {'field' : 'ENRLMT_ID', 'type': 'String'},
-               {'field' : 'PROVIDER_TYPE_CD', 'type': 'String'},
-               {'field' : 'PROVIDER_TYPE_DESC', 'type': 'String'},
-               {'field' : 'STATE_CD', 'type': 'String'},
-               {'field' : 'ORG_NAME', 'type': 'String'},
-               {'field' : 'GNDR_SW', 'type': 'String', 'has missing':True},
-               {'field' : 'PRVDR_ADR_LINE_1_TXT', 'type': 'String', 'has missing':True},
-               {'field' : 'PRVDR_ADR_LINE_2_TXT', 'type': 'String', 'has missing':True},
-               {'field' : 'PRVDR_ADR_CITY_NAME', 'type': 'String', 'has missing':True},
-               {'field' : 'PRVDR_ADR_STATE_CD', 'type': 'String', 'has missing':True},
-               {'field' : 'PRVDR_ADR_ZIP_CD', 'type': 'String', 'has missing':True},
-               {'field' : 'PRVDR_ADR_ZIP_PLUS_4_CD', 'type': 'String', 'has missing':True},
-               {'field' : 'TEL_NUM', 'type': 'String', 'has missing':True},
-               {'field' : 'FIRST_NAME', 'type': 'String', 'has missing':True},
-               {'field' : 'LAST_NAME', 'type': 'String', 'has missing':True},
-               {'field' : 'MDL_NAME', 'type': 'String', 'has missing':True}]
+  variables = [{'field' : 'NPI', 'type': 'Exact'},
+               {'field' : 'PECOS_ASCT_CNTL_ID', 'type': 'Exact'},
+               {'field' : 'ENRLMT_ID', 'type': 'Exact'},
+               {'field' : 'PROVIDER_TYPE_CD', 'type': 'Exact'},
+               {'field' : 'PROVIDER_TYPE_DESC', 'type': 'Exact'},
+               {'field' : 'STATE_CD', 'type': 'Exact'},
+               {'field' : 'ORG_NAME', 'type': 'Exact'},
+               {'field' : 'GNDR_SW', 'type': 'Exact'},
+               {'field' : 'PRVDR_ADR_LINE_1_TXT', 'type': 'Exact'},
+               {'field' : 'PRVDR_ADR_LINE_2_TXT', 'type': 'Exact'},
+               {'field' : 'PRVDR_ADR_CITY_NAME', 'type': 'Exact'},
+               {'field' : 'PRVDR_ADR_STATE_CD', 'type': 'Exact'},
+               {'field' : 'PRVDR_ADR_ZIP_CD', 'type': 'Exact'},
+               {'field' : 'PRVDR_ADR_ZIP_PLUS_4_CD', 'type': 'Exact'},
+               {'field' : 'TEL_NUM', 'type': 'Exact'},
+               {'field' : 'FIRST_NAME', 'type': 'Exact'},
+               {'field' : 'LAST_NAME', 'type': 'Exact'},
+               {'field' : 'MDL_NAME', 'type': 'Exact'}]
 
   deduper = dedupe.Dedupe(variables)
-  deduper.sample(data_d, 150000, .5)
+  deduper.sample(data_d, 150000,0.5)
 
   return [deduper,data_d]
 
 def preProcess(column):
+
 
     import unidecode
     column = column.decode("utf8")

@@ -90,8 +90,8 @@ def get_stars():
   print(update,id)
   if update == 'false':
     es.index(index="inputdata", doc_type='data', body=doc)
-  else:
-    es.index(index='inputdata',doc_type='data',id=id,body=doc)
+  #else:
+  #  es.index(index='inputdata',doc_type='data',id=id,body=doc)
 
   for index, row in enumerate(readCSV):
     	if count == 0:
@@ -155,8 +155,8 @@ def get_downloadcsv():
     }
     if delete == 'false':
         es.index(index="csvresult", doc_type='records', body=doc)
-    else:
-        es.index(index='csvresult',doc_type='records',id=id,body=doc)
+    #else:
+    #    es.index(index='csvresult',doc_type='records',id=id,body=doc)
 
     return jsonify({'result' : output1})
 

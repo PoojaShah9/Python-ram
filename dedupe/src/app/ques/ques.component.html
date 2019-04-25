@@ -5,7 +5,7 @@
     <div>
       <h5>Total Matched Records : {{this.matchData.match.length}} / 5</h5>
       <h5>Total Distinct Records : {{this.matchData.distinct.length}} / 5</h5>
-      <button class="btn btn-danger" *ngIf="this.matchData.match.length > 4 && this.matchData.distinct.length >4"
+      <button class="btn btn-danger" *ngIf="this.matchData.match.length > 4 || this.matchData.distinct.length >4"
               (click)="terminateData()">Terminate
       </button>
 

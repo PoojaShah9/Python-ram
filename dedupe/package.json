@@ -26,6 +26,8 @@
     "datatables.net-dt": "^1.10.19",
     "jquery": "^3.3.1",
     "ng2-smart-table": "^1.4.0",
+    "ng4-loading-spinner": "^1.2.3",
+    "ngx-spinner": "^7.1.4",
     "popper": "^1.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

@@ -7,6 +7,7 @@ import { TableListComponent } from './table-list/table-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import { QuesComponent } from './ques/ques.component';
 import {DataTablesModule} from "angular-datatables";
+import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {DataTablesModule} from "angular-datatables";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

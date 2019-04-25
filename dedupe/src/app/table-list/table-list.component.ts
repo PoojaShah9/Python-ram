@@ -16,13 +16,6 @@ export class TableListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 5000);
-
     this.getdata();
   }
     getdata(){

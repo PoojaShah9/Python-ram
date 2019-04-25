@@ -22,7 +22,7 @@ CORS(app)
 fields = []
 rows = []
 
-inputfile = 'example.csv'
+inputfile = 'example4.csv'
 
 """
 filepath = os.getcwd() + '/inputfile'
@@ -43,7 +43,8 @@ bucket = s3.Bucket(u'pythoncsv')
 es = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     use_ssl=True,
-    verify_certs=True
+    verify_certs=True,
+    request_timeout=1300
 )
 print(es.info())
 
@@ -72,7 +73,7 @@ def get_stars():
   update = 'false'
   id = 'undefined'
   if es.indices.exists(index="inputdata"):
-      res = es.search(index="inputdata", body={"query": {"match": {"filename" : inputfile}}})
+      res = es.search(index="inputdata", body={"query" : {"term" : { "filename": inputfile } }})
       id = res['hits']['hits'][0]['_id'] if (len(res['hits']['hits']) > 0)  else 'undefined'
 
   if id != 'undefined':
@@ -86,20 +87,24 @@ def get_stars():
       'filename': inputfile,
       'data': lines,
   }
+  print(update,id)
   if update == 'false':
     es.index(index="inputdata", doc_type='data', body=doc)
   else:
     es.index(index='inputdata',doc_type='data',id=id,body=doc)
-  for row in readCSV:
-      if count == 0:
-          count = 1
-          for single in row:
-              header.append(single)
-      else:
-          final = {}
-          for index, item in enumerate(header):
-               final[item]= row[index]
-          output.append(final)
+
+  for index, row in enumerate(readCSV):
+    	if count == 0:
+  	  count = 1
+  	  for single in row:
+  		  header.append(single)
+  	else:
+  	  final = {}
+  	  for index, item in enumerate(header):
+  		   final[item]= row[index]
+
+  	  if len(output) <= 100:
+  	 		output.append(final)
 
   return jsonify({'result' : output})
 
@@ -114,8 +119,11 @@ def get_downloadcsv():
     jsonfile = d['final']
     xyz = secondprogram(jsonfile)
     output = []
+    output1 = []
     count = 0;
     header = []
+
+
 
     with open(xyz) as csvfile:
       readCSV = csv.reader(csvfile, delimiter=',')
@@ -129,6 +137,8 @@ def get_downloadcsv():
               for index, item in enumerate(header):
                    final[item]= row[index]
               output.append(final)
+              if len(output) <= 100:
+              	 	output1.append(final)
 
     delete = 'false'
     id = 'undefined'
@@ -147,7 +157,8 @@ def get_downloadcsv():
         es.index(index="csvresult", doc_type='records', body=doc)
     else:
         es.index(index='csvresult',doc_type='records',id=id,body=doc)
-    return jsonify({'result' : output})
+
+    return jsonify({'result' : output1})
 
 
 if __name__ == '__main__':

@@ -15,8 +15,6 @@ import boto3
 import dedupe
 from unidecode import unidecode
 
-input_file = 'inputfile/input.csv'
-
 settings_file = 'myTest_learned_settings'
 training_file = 'myTest_training.json'
 
@@ -27,12 +25,13 @@ host = 'search-dedupe-n3y3uvp2uoiok2jgubwotjwag4.us-east-1.es.amazonaws.com'
 s3 = boto3.resource('s3',aws_access_key_id='AKIAWQGV4HBLW42U7EUL',aws_secret_access_key='riihGrGkiIGHW0kqKSeBsvEW4M7cS3VpzAJMXSOa')
 bucket = s3.Bucket(u'pythoncsv')
 
-inputfile = 'example.csv'
+inputfile = 'example4.csv'
 
 es = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     use_ssl=True,
-    verify_certs=True
+    verify_certs=True,
+    request_timeout=1300
 )
 
 
@@ -41,12 +40,26 @@ es = Elasticsearch(
 def firstcall():
 
   import dedupe
-  data_d = readData(input_file)
+  data_d = readData(inputfile)
 
-  variables = [{'field' : 'name', 'type': 'String'},
-               {'field' : 'address', 'type': 'String'},
-               {'field' : 'city', 'type': 'String', 'has missing':True},
-               {'field' : 'cuisine', 'type': 'String', 'has missing':True}]
+  variables = [{'field' : 'NPI', 'type': 'String'},
+               {'field' : 'PECOS_ASCT_CNTL_ID', 'type': 'String'},
+               {'field' : 'ENRLMT_ID', 'type': 'String'},
+               {'field' : 'PROVIDER_TYPE_CD', 'type': 'String'},
+               {'field' : 'PROVIDER_TYPE_DESC', 'type': 'String'},
+               {'field' : 'STATE_CD', 'type': 'String'},
+               {'field' : 'ORG_NAME', 'type': 'String'},
+               {'field' : 'GNDR_SW', 'type': 'String', 'has missing':True},
+               {'field' : 'PRVDR_ADR_LINE_1_TXT', 'type': 'String', 'has missing':True},
+               {'field' : 'PRVDR_ADR_LINE_2_TXT', 'type': 'String', 'has missing':True},
+               {'field' : 'PRVDR_ADR_CITY_NAME', 'type': 'String', 'has missing':True},
+               {'field' : 'PRVDR_ADR_STATE_CD', 'type': 'String', 'has missing':True},
+               {'field' : 'PRVDR_ADR_ZIP_CD', 'type': 'String', 'has missing':True},
+               {'field' : 'PRVDR_ADR_ZIP_PLUS_4_CD', 'type': 'String', 'has missing':True},
+               {'field' : 'TEL_NUM', 'type': 'String', 'has missing':True},
+               {'field' : 'FIRST_NAME', 'type': 'String', 'has missing':True},
+               {'field' : 'LAST_NAME', 'type': 'String', 'has missing':True},
+               {'field' : 'MDL_NAME', 'type': 'String', 'has missing':True}]
 
   deduper = dedupe.Dedupe(variables)
   deduper.sample(data_d, 150000, .5)
@@ -56,7 +69,7 @@ def firstcall():
 def preProcess(column):
 
     import unidecode
-    #column = column.decode("utf8")
+    column = column.decode("utf8")
     column = unidecode.unidecode(column)
     column = re.sub('  +', ' ', column)
     column = re.sub('\n', ' ', column)

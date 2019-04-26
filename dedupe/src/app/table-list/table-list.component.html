@@ -13,6 +13,10 @@
     <th >Provider Type</th>
     <th >First Name</th>
     <th >Organisation Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
   </tr>
   </thead>
   <tbody>
@@ -23,6 +27,10 @@
     <td>{{ a.PROVIDER_TYPE_CD }}</td>
     <td>{{ a.FIRST_NAME}}</td>
     <td>{{ a.ORG_NAME}}</td>
+    <td>{{a.PRVDR_ADR_LINE_1_TXT}}</td>
+    <td>{{a.PRVDR_ADR_CITY_NAME}}</td>
+    <td>{{a.PRVDR_ADR_STATE_CD}}</td>
+    <td>{{a.PRVDR_ADR_ZIP_CD}}</td>
   </tr>
   </tbody>
 </table>

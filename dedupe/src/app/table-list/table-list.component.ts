@@ -1,6 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {TableService} from "../table.service";
-import {NgxSpinnerService} from "ngx-spinner";
+// import {NgxSpinnerService} from "ngx-spinner";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 
 @Component({
@@ -19,14 +19,13 @@ export class TableListComponent implements OnInit {
     this.getdata();
   }
     getdata(){
-    this.spinner.show();
+      this.spinner.show();
     this.TableService.getAlldata().subscribe(data=>{
       console.log(data,'data');
       let d = data.result;
-      this.spinner.hide();
-    //  d= d.replace('\\','');
       console.log("fgfdg", d);
       this.datas = d;
+      this.spinner.hide();
     },
       error1 => {
         console.log('error', error1);

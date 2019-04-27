@@ -11,35 +11,52 @@
 
     </div>
     <div *ngIf="showQuestions">
-      <div class="panel panel-default" style="width: 70%">
+      <div class="panel panel-default" style="width: 100%">
         <div class="panel-heading"><b> Are the below record similar or not?</b></div>
         <div class="panel-body"><table class="row-border hover table">
           <thead>
           <tr>
-            <th class="text-centre">Gender</th>
-            <th class="text-centre">Description</th>
-            <th class="text-centre">Provider Type</th>
-            <th class="text-centre">First Name</th>
-            <th class="text-centre">Organisation Name</th>
-            <th class="text-centre">Unique_Id</th>
-            <th class="text-centre">Address</th>
-            <th class="text-centre">City</th>
-            <th class="text-centre">State</th>
-            <th class="text-centre">Zip</th>
+            <th class="centre">Unique Id</th>
+            <th class="centre">Cntl ID</th>
+            <th class="centre">Enrollment ID </th>
+            <th class="centre">Provider Type</th>
+            <th class="centre">Provider Desc</th>
+            <th class="centre">State Cd</th>
+            <th class="centre">First Name</th>
+            <th class="centre">Middle Name</th>
+            <th class="centre">Last Name</th>
+            <th class="centre">Organisation Name</th>
+            <th class="centre">Gender</th>
+            <th class="centre">Address 1</th>
+            <th class="centre">Address 2</th>
+            <th class="centre">City</th>
+            <th class="centre">State</th>
+            <th class="centre">Zip</th>
+            <th class="centre">Zip cd</th>
+            <th class="centre">Phone no</th>
+
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let b of value">
-            <td>{{b.GNDR_SW}}</td>
-            <td>{{b.PROVIDER_TYPE_DESC}}</td>
-            <td>{{b.PROVIDER_TYPE_CD}}</td>
-            <td>{{b.FIRST_NAME}}</td>
-            <td>{{b.ORG_NAME}}</td>
             <td>{{b.unique_id}}</td>
+            <td>{{b.PECOS_ASCT_CNTL_ID}}</td>
+            <td>{{b.ENRLMT_ID}}</td>
+            <td>{{b.PROVIDER_TYPE_CD}}</td>
+            <td>{{b.PROVIDER_TYPE_DESC}}</td>
+            <td>{{b.STATE_CD}}</td>
+            <td>{{b.FIRST_NAME }}</td>
+            <td>{{b.MDL_NAME}}</td>
+            <td>{{b.LAST_NAME}}</td>
+            <td>{{b.ORG_NAME}}</td>
+            <td>{{b.GNDR_SW}}</td>
             <td>{{b.PRVDR_ADR_LINE_1_TXT}}</td>
+            <td>{{b.PRVDR_ADR_LINE_2_TXT}}</td>
             <td>{{b.PRVDR_ADR_CITY_NAME}}</td>
             <td>{{b.PRVDR_ADR_STATE_CD}}</td>
             <td>{{b.PRVDR_ADR_ZIP_CD}}</td>
+            <td>{{b.PRVDR_ADR_ZIP_PLUS_4_CD}}</td>
+            <td>{{b.TEL_NUM}}</td>
           </tr>
           </tbody>
         </table></div>
@@ -51,32 +68,48 @@
     <div *ngIf="!showQuestions">
       <table class="table">
         <tr>
-        <th>cluster_id</th>
-        <th>confidence_score</th>
-        <th>unique_id</th>
-        <th>First Name</th>
-        <th>Gender</th>
-        <th>Description</th>
-        <th>Provider Type</th>
-        <th>Organisation Name</th>
-          <th>Address</th>
+          <th>cluster_id</th>
+          <th>confidence_score</th>
+          <th>unique_id</th>
+          <th>Cntl ID</th>
+          <th>Enrollment ID </th>
+          <th>Provider Type</th>
+          <th>Provider Desc</th>
+          <th>State Cd</th>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>Organisation Name</th>
+          <th>Gender</th>
+          <th>Address 1</th>
+          <th>Address 2</th>
           <th>City</th>
           <th>State</th>
           <th>Zip</th>
+          <th>Zip cd</th>
+          <th>Phone no</th>
         </tr>
         <tr *ngFor="let a of finaldata">
           <td>{{a["Cluster ID"]}}</td>
           <td>{{a["confidence_score"]}}</td>
           <td>{{a["unique_id"]}}</td>
-          <td>{{a["FIRST_NAME"]}}</td>
-          <td>{{a["GNDR_SW"]}}</td>
-          <td>{{a["PROVIDER_TYPE_DESC"]}}</td>
+          <td>{{a["PECOS_ASCT_CNTL_ID"]}}</td>
+          <td>{{a["ENRLMT_ID"]}}</td>
           <td>{{a["PROVIDER_TYPE_CD"]}}</td>
+          <td>{{a["PROVIDER_TYPE_DESC"]}}</td>
+          <td>{{a["STATE_CD"]}}</td>
+          <td>{{a["FIRST_NAME"]}}</td>
+          <td>{{a["MDL_NAME"]}}</td>
+          <td>{{a["LAST_NAME"]}}</td>
           <td>{{a["ORG_NAME"]}}</td>
+          <td>{{a["GNDR_SW"]}}</td>
           <td>{{a["PRVDR_ADR_LINE_1_TXT"]}}</td>
+          <td>{{a["PRVDR_ADR_LINE_2_TXT"]}}</td>
           <td>{{a["PRVDR_ADR_CITY_NAME"]}}</td>
           <td>{{a["PRVDR_ADR_STATE_CD"]}}</td>
           <td>{{a["PRVDR_ADR_ZIP_CD"]}}</td>
+          <td>{{a["PRVDR_ADR_ZIP_PLUS_4_CD"]}}</td>
+          <td>{{a["TEL_NUM"]}}</td>
         </tr>
       </table>
     </div>

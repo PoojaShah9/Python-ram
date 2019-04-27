@@ -25,40 +25,44 @@ host = 'search-dedupe-n3y3uvp2uoiok2jgubwotjwag4.us-east-1.es.amazonaws.com'
 s3 = boto3.resource('s3',aws_access_key_id='AKIAWQGV4HBLW42U7EUL',aws_secret_access_key='riihGrGkiIGHW0kqKSeBsvEW4M7cS3VpzAJMXSOa')
 bucket = s3.Bucket(u'pythoncsv')
 
-inputfile = 'example4.csv'
+inputfile = 'example5.csv'
 
 es = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     use_ssl=True,
     verify_certs=True,
-    request_timeout=1300
+    request_timeout=130000
 )
 
-
+data_d = {}
+deduper = ''
 
 
 def firstcall():
 
   import dedupe
+  global data_d
+  global deduper
+
   data_d = readData(inputfile)
-  variables = [{'field' : 'NPI', 'type': 'Exact'},
-               {'field' : 'PECOS_ASCT_CNTL_ID', 'type': 'Exact'},
-               {'field' : 'ENRLMT_ID', 'type': 'Exact'},
-               {'field' : 'PROVIDER_TYPE_CD', 'type': 'Exact'},
-               {'field' : 'PROVIDER_TYPE_DESC', 'type': 'Exact'},
-               {'field' : 'STATE_CD', 'type': 'Exact'},
-               {'field' : 'ORG_NAME', 'type': 'Exact'},
-               {'field' : 'GNDR_SW', 'type': 'Exact'},
-               {'field' : 'PRVDR_ADR_LINE_1_TXT', 'type': 'Exact'},
-               {'field' : 'PRVDR_ADR_LINE_2_TXT', 'type': 'Exact'},
-               {'field' : 'PRVDR_ADR_CITY_NAME', 'type': 'Exact'},
-               {'field' : 'PRVDR_ADR_STATE_CD', 'type': 'Exact'},
-               {'field' : 'PRVDR_ADR_ZIP_CD', 'type': 'Exact'},
-               {'field' : 'PRVDR_ADR_ZIP_PLUS_4_CD', 'type': 'Exact'},
-               {'field' : 'TEL_NUM', 'type': 'Exact'},
-               {'field' : 'FIRST_NAME', 'type': 'Exact'},
-               {'field' : 'LAST_NAME', 'type': 'Exact'},
-               {'field' : 'MDL_NAME', 'type': 'Exact'}]
+  variables = [{'field' : 'NPI', 'type': 'ShortString'},
+               {'field' : 'PECOS_ASCT_CNTL_ID', 'type': 'ShortString'},
+               {'field' : 'ENRLMT_ID', 'type': 'ShortString'},
+               {'field' : 'PROVIDER_TYPE_CD', 'type': 'ShortString'},
+               {'field' : 'PROVIDER_TYPE_DESC', 'type': 'ShortString'},
+               {'field' : 'STATE_CD', 'type': 'ShortString'},
+               {'field' : 'ORG_NAME', 'type': 'ShortString'},
+               {'field' : 'GNDR_SW', 'type': 'ShortString'},
+               {'field' : 'PRVDR_ADR_LINE_1_TXT', 'type': 'ShortString'},
+               {'field' : 'PRVDR_ADR_LINE_2_TXT', 'type': 'ShortString'},
+               {'field' : 'PRVDR_ADR_CITY_NAME', 'type': 'ShortString'},
+               {'field' : 'PRVDR_ADR_STATE_CD', 'type': 'ShortString'},
+               {'field' : 'PRVDR_ADR_ZIP_CD', 'type': 'ShortString'},
+               {'field' : 'PRVDR_ADR_ZIP_PLUS_4_CD', 'type': 'ShortString'},
+               {'field' : 'TEL_NUM', 'type': 'ShortString'},
+               {'field' : 'FIRST_NAME', 'type': 'ShortString'},
+               {'field' : 'LAST_NAME', 'type': 'ShortString'},
+               {'field' : 'MDL_NAME', 'type': 'ShortString'}]
 
   deduper = dedupe.Dedupe(variables)
   deduper.sample(data_d, 150000,0.5)
@@ -80,12 +84,13 @@ def preProcess(column):
 
 def readData(filename):
 
+    global data_d
+    global deduper
     data = []
     if es.indices.exists(index="inputdata"):
         res = es.search(index="inputdata", body={"query": {"match": {"filename" : inputfile}}})
         data = res['hits']['hits'][0]['_source']['data']
 
-    data_d = {}
     reader = csv.DictReader(data)
     for row in reader:
         clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
@@ -98,8 +103,11 @@ def firstprogram():
 
     import dedupe
     # 1
+    global data_d
+    global deduper
 
-    deduper = firstcall()[0]
+    if(data_d == {}):
+      deduper = firstcall()[0]
     pair = deduper.uncertainPairs()
     return jsonify({'result' : pair[0]})
 
@@ -107,8 +115,13 @@ def secondprogram(jsonfile):
 
     #2
     import dedupe
-    deduper = firstcall()[0]
-    data_d = firstcall()[1]
+    global data_d
+    global deduper
+
+    if(data_d == {}):
+      mydata = firstcall()
+      deduper = mydata[0]
+      data_d = mydata[1]
     newinputs = jsonfile
     newJson = {'distinct':[],'match':[]}
     for dist in enumerate(newinputs['distinct']):
@@ -136,6 +149,8 @@ def secondprogram(jsonfile):
     cluster_membership = {}
     cluster_notmember = {}
     cluster_id = 0
+    count = 0;
+
     for (cluster_id, cluster) in enumerate(clustered_dupes):
         id_set, scores = cluster
         """
@@ -149,6 +164,7 @@ def secondprogram(jsonfile):
         """
         cluster_d = [data_d[c] for c in id_set]
         canonical_rep = dedupe.canonicalize(cluster_d)
+        count += 1
         for record_id, score in zip(id_set, scores) :
             cluster_membership[record_id] = {
                 "cluster id" : cluster_id,
@@ -163,10 +179,12 @@ def secondprogram(jsonfile):
     output_file = 'OP' + out[0] + '.csv'
     with open(output_file, 'w') as f_output:
         writer = csv.writer(f_output)
+
         obj = bucket.Object(key=inputfile)
         response = obj.get()
         lines = response[u'Body'].read().splitlines()
         reader = csv.reader(lines)
+
         heading_row = next(reader)
         heading_row.insert(0, 'confidence_score')
         heading_row.insert(0, 'Cluster ID')
@@ -194,4 +212,4 @@ def secondprogram(jsonfile):
             writer.writerow(row)
             result.append(row)
 
-    return (output_file)
+    return [output_file,count]

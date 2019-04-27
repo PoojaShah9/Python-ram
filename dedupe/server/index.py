@@ -3,6 +3,8 @@ from flask_cors import CORS
 from flask import jsonify
 from flask import request
 import boto3
+import pandas as pd
+from fastparquet import write
 
 from elasticsearch import Elasticsearch
 
@@ -22,7 +24,7 @@ CORS(app)
 fields = []
 rows = []
 
-inputfile = 'example4.csv'
+inputfile = 'example5.csv'
 
 """
 filepath = os.getcwd() + '/inputfile'
@@ -44,7 +46,7 @@ es = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     use_ssl=True,
     verify_certs=True,
-    request_timeout=1300
+    request_timeout=130000
 )
 print(es.info())
 
@@ -72,26 +74,27 @@ def get_stars():
   header = []
   update = 'false'
   id = 'undefined'
-  if es.indices.exists(index="inputdata"):
-      res = es.search(index="inputdata", body={"query" : {"term" : { "filename": inputfile } }})
-      id = res['hits']['hits'][0]['_id'] if (len(res['hits']['hits']) > 0)  else 'undefined'
-
-  if id != 'undefined':
-    update = 'true'
 
   obj = bucket.Object(key=inputfile)
   response = obj.get()
   lines = response[u'Body'].read().splitlines()
   readCSV = csv.reader(lines)
+
+  if es.indices.exists(index="inputdata"):
+      res = es.search(index="inputdata", body={"query" : {"match" : { "filename": inputfile }}})
+      print(len(res['hits']['hits']))
+      id = res['hits']['hits'][0]['_id'] if (len(res['hits']['hits']) > 0)  else 'undefined'
+
+  if id != 'undefined':
+    update = 'true'
+
   doc = {
       'filename': inputfile,
       'data': lines,
   }
   print(update,id)
-  if update == 'false':
+  if id == 'undefined':
     es.index(index="inputdata", doc_type='data', body=doc)
-  #else:
-  #  es.index(index='inputdata',doc_type='data',id=id,body=doc)
 
   for index, row in enumerate(readCSV):
     	if count == 0:
@@ -103,7 +106,7 @@ def get_stars():
   	  for index, item in enumerate(header):
   		   final[item]= row[index]
 
-  	  if len(output) <= 100:
+  	  if len(output) <= 499:
   	 		output.append(final)
 
   return jsonify({'result' : output})
@@ -123,9 +126,10 @@ def get_downloadcsv():
     count = 0;
     header = []
 
+    print(xyz[0])
+    print(xyz[1])
 
-
-    with open(xyz) as csvfile:
+    with open(xyz[0]) as csvfile:
       readCSV = csv.reader(csvfile, delimiter=',')
       for row in readCSV:
           if count == 0:
@@ -137,13 +141,14 @@ def get_downloadcsv():
               for index, item in enumerate(header):
                    final[item]= row[index]
               output.append(final)
-              if len(output) <= 100:
+              if len(output) <= 499:
               	 	output1.append(final)
 
     delete = 'false'
     id = 'undefined'
     if es.indices.exists(index="csvresult"):
-        res = es.search(index="csvresult", body={"query": {"match": {"filename" : inputfile}}})
+        res = es.search(index="csvresult", body={"query" : {"match" : { "filename": inputfile }}})
+        print(len(res['hits']['hits']))
         id = res['hits']['hits'][0]['_id'] if (len(res['hits']['hits']) > 0)  else 'undefined'
 
     if id != 'undefined':
@@ -153,12 +158,16 @@ def get_downloadcsv():
         'filename': inputfile,
         'data': output,
     }
+    print(id,delete)
     if delete == 'false':
         es.index(index="csvresult", doc_type='records', body=doc)
-    #else:
-    #    es.index(index='csvresult',doc_type='records',id=id,body=doc)
 
-    return jsonify({'result' : output1})
+    df = pd.read_csv(xyz[0])
+    write('output.parquet', df)
+
+    s3.Object('pythoncsv', 'op.parquet').put(Body=open('output.parquet', 'rb'))
+
+    return jsonify({'result' : output1,'remove_duplicates':xyz[1]})
 
 
 if __name__ == '__main__':

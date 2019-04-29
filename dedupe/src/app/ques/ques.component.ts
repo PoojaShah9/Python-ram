@@ -13,6 +13,7 @@ export class QuesComponent implements OnInit {
   index = 1;
   showQuestions = true;
   finaldata:any = [];
+  duplicate: any;
   constructor(public TableService:TableService,
               private spinner:Ng4LoadingSpinnerService) {}
 
@@ -26,8 +27,9 @@ export class QuesComponent implements OnInit {
   getAllQues(){
     this.spinner.show();
     this.TableService.getQues().subscribe(data=>{
-        console.log(data,'data');
+        // console.log(data,'data');
         this.value = data.result;
+        // console.log("hi");
         this.spinner.hide();
       },
       error1 => {
@@ -52,6 +54,8 @@ export class QuesComponent implements OnInit {
     this.showQuestions = false;
     this.spinner.show();
     this.TableService.postMatchData(final).subscribe(final=>{
+      this.duplicate = final.remove_duplicates;
+      console.log("dupliacte",this.duplicate);
       this.finaldata = final.result;
       this.spinner.hide();
     })

@@ -212,4 +212,6 @@ def secondprogram(jsonfile):
             writer.writerow(row)
             result.append(row)
 
+    data_d = {}
+    deduper = ''
     return [output_file,count]

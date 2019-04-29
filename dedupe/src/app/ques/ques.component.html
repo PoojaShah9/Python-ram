@@ -1,4 +1,4 @@
-<ng4-loading-spinner></ng4-loading-spinner>
+<ng4-loading-spinner [timeout]="4000"></ng4-loading-spinner>
 
 <div>
   <section class="ourservices" style="padding:50px;">
@@ -8,6 +8,7 @@
       <button class="btn btn-danger" *ngIf="this.matchData.match.length > 4 && this.matchData.distinct.length >4"
               (click)="terminateData()">Terminate
       </button>
+      <h5 *ngIf="!showQuestions">Total Duplicate data: {{this.duplicate}}</h5>
 
     </div>
     <div *ngIf="showQuestions">

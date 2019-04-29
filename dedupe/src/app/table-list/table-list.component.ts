@@ -21,10 +21,9 @@ export class TableListComponent implements OnInit {
     getdata(){
       this.spinner.show();
     this.TableService.getAlldata().subscribe(data=>{
-      console.log(data,'data');
       let d = data.result;
-      console.log("fgfdg", d);
       this.datas = d;
+      console.log("hi");
       this.spinner.hide();
     },
       error1 => {

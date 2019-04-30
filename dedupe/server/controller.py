@@ -107,7 +107,7 @@ def newDataD():
     obj = bucket.Object(key='input.csv')
     response = obj.get()
     lines = response[u'Body'].read().splitlines()
-    reader = csv.reader(lines)
+    reader = csv.DictReader(lines)
 
     for row in reader:
         clean_row = [(k, preProcess(v)) for (k, v) in row.items()]

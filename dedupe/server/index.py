@@ -167,6 +167,7 @@ def get_downloadcsv():
 
     delete = 'false'
     id = 'undefined'
+    """
     if es.indices.exists(index="csvresult"):
         res = es.search(index="csvresult", body={"query" : {"match" : { "filename": inputfile }}})
         print(len(res['hits']['hits']))
@@ -180,8 +181,9 @@ def get_downloadcsv():
         'data': output,
     }
     print(id,delete)
-    if delete == 'false':
-        es.index(index="csvresult", doc_type='records', body=doc)
+    #if delete == 'false':
+    #    es.index(index="csvresult", doc_type='records', body=doc)
+    """
 
     df = pd.read_csv(xyz[0])
     write('output.parquet', df)

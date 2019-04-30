@@ -31,7 +31,7 @@ es = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     use_ssl=True,
     verify_certs=True,
-    request_timeout=130000
+    request_timeout=200000
 )
 
 data_d = {}
@@ -65,7 +65,7 @@ def firstcall():
                {'field' : 'MDL_NAME', 'type': 'ShortString'}]
 
   deduper = dedupe.Dedupe(variables)
-  deduper.sample(data_d, 150000,0.5)
+  deduper.sample(data_d, 100,0.5)
 
   return [deduper,data_d]
 
@@ -86,6 +86,7 @@ def readData(filename):
 
     global data_d
     global deduper
+
     data = []
     if es.indices.exists(index="inputdata"):
         res = es.search(index="inputdata", body={"query": {"match": {"filename" : inputfile}}})
@@ -96,6 +97,19 @@ def readData(filename):
         clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
         row_id = int(row['unique_id'])
         data_d[row_id] = dict(clean_row)
+
+    return data_d
+
+
+def newDataD():
+    data_d = {}
+    abc = '/home/incline/Downloads/input.csv'
+    with open(abc) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
+            row_id = int(row['unique_id'])
+            data_d[row_id] = dict(clean_row)
 
     return data_d
 
@@ -121,7 +135,9 @@ def secondprogram(jsonfile):
     if(data_d == {}):
       mydata = firstcall()
       deduper = mydata[0]
-      data_d = mydata[1]
+
+    data_d = newDataD()
+    print(len(data_d.keys()))
     newinputs = jsonfile
     newJson = {'distinct':[],'match':[]}
     for dist in enumerate(newinputs['distinct']):
@@ -180,11 +196,12 @@ def secondprogram(jsonfile):
     with open(output_file, 'w') as f_output:
         writer = csv.writer(f_output)
 
-        obj = bucket.Object(key=inputfile)
+        obj = bucket.Object(key='input.csv')
         response = obj.get()
         lines = response[u'Body'].read().splitlines()
         reader = csv.reader(lines)
 
+        print('online reading done')
         heading_row = next(reader)
         heading_row.insert(0, 'confidence_score')
         heading_row.insert(0, 'Cluster ID')
@@ -195,6 +212,7 @@ def secondprogram(jsonfile):
         writer.writerow(heading_row)
 
         for row in reader:
+            print('reading row')
             row_id = int(row[0])
             if row_id in cluster_membership :
                 cluster_id = cluster_membership[row_id]["cluster id"]

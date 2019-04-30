@@ -46,7 +46,7 @@ es = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     use_ssl=True,
     verify_certs=True,
-    request_timeout=130000
+    request_timeout=200000
 )
 print(es.info())
 
@@ -66,6 +66,27 @@ def search():
     res = es.search(index="csvresult")
 
     return jsonify({'result' : res['hits']['hits']})
+
+
+@app.route('/getmycsv', methods=['GET'])
+def get_stars1():
+  output = []
+  count = 0;
+  header = []
+  with open('/home/incline/Downloads/Base_enrl_File(1).csv') as csvfile:
+    readCSV = csv.reader(csvfile, delimiter=',')
+    for row in readCSV:
+        if count == 0:
+            count = 1
+            for single in row:
+                header.append(single)
+        else:
+            final = {}
+            for index, item in enumerate(header):
+                 final[item]= row[index]
+            output.append(final)
+
+  return jsonify({'result' : 'success'})
 
 @app.route('/getcsv', methods=['GET'])
 def get_stars():

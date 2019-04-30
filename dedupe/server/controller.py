@@ -103,13 +103,16 @@ def readData(filename):
 
 def newDataD():
     data_d = {}
-    abc = '/home/incline/Downloads/input.csv'
-    with open(abc) as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
-            row_id = int(row['unique_id'])
-            data_d[row_id] = dict(clean_row)
+
+    obj = bucket.Object(key='input.csv')
+    response = obj.get()
+    lines = response[u'Body'].read().splitlines()
+    reader = csv.reader(lines)
+
+    for row in reader:
+        clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
+        row_id = int(row['unique_id'])
+        data_d[row_id] = dict(clean_row)
 
     return data_d
 

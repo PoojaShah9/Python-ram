@@ -185,7 +185,7 @@ def get_downloadcsv():
     #    es.index(index="csvresult", doc_type='records', body=doc)
     """
 
-    df = pd.read_csv(xyz[0])
+    df = pd.read_csv(xyz[0], low_memory=False)
     write('output.parquet', df, object_encoding='utf8')
 
     s3.Object('pythoncsv', 'op.parquet').put(Body=open('output.parquet', 'rb'))

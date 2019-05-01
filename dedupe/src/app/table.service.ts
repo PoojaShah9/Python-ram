@@ -10,13 +10,13 @@ export class TableService {
   }
   getAlldata(){
     // return data;
-    return this.http.get<any>('http://18.206.91.47:5000/getcsv');
+    return this.http.get<any>('http://3.84.188.55:5000/getcsv');
   }
   getQues(){
-    return this.http.get<any>('http://18.206.91.47:5000/getquestions');
+    return this.http.get<any>('http://3.84.188.55:5000/getquestions');
   }
   postMatchData(data){
-    return this.http.post<any>('http://18.206.91.47:5000/getnewcsv',data);
+    return this.http.post<any>('http://3.84.188.55:5000/getnewcsv',data);
   }
 }
 

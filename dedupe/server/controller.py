@@ -20,19 +20,10 @@ training_file = 'myTest_training.json'
 
 now = datetime.datetime.now()
 
-host = 'search-dedupe-n3y3uvp2uoiok2jgubwotjwag4.us-east-1.es.amazonaws.com'
-
 s3 = boto3.resource('s3',aws_access_key_id='AKIAWQGV4HBLW42U7EUL',aws_secret_access_key='riihGrGkiIGHW0kqKSeBsvEW4M7cS3VpzAJMXSOa')
 bucket = s3.Bucket(u'pythoncsv')
 
-inputfile = 'example5.csv'
-
-es = Elasticsearch(
-    hosts=[{'host': host, 'port': 443}],
-    use_ssl=True,
-    verify_certs=True,
-    request_timeout=200000
-)
+inputfile = 'inputoutputofcsv/example5.csv'
 
 data_d = {}
 deduper = ''
@@ -87,13 +78,12 @@ def readData(filename):
     global data_d
     global deduper
 
-    data = []
-    if es.indices.exists(index="inputdata"):
-        res = es.search(index="inputdata", body={"query": {"match": {"filename" : inputfile}}})
-        data = res['hits']['hits'][0]['_source']['data']
+    obj = bucket.Object(key=inputfile)
+    response = obj.get()
+    lines = response[u'Body'].read().splitlines()
+    readCSV = csv.DictReader(lines)
 
-    reader = csv.DictReader(data)
-    for row in reader:
+    for row in readCSV:
         clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
         row_id = int(row['unique_id'])
         data_d[row_id] = dict(clean_row)
@@ -104,7 +94,7 @@ def readData(filename):
 def newDataD():
     data_d = {}
 
-    obj = bucket.Object(key='input.csv')
+    obj = bucket.Object(key='inputoutputofcsv/input.csv')
     response = obj.get()
     lines = response[u'Body'].read().splitlines()
     reader = csv.DictReader(lines)
@@ -199,7 +189,7 @@ def secondprogram(jsonfile):
     with open(output_file, 'w') as f_output:
         writer = csv.writer(f_output)
 
-        obj = bucket.Object(key='input.csv')
+        obj = bucket.Object(key='inputoutputofcsv/input.csv')
         response = obj.get()
         lines = response[u'Body'].read().splitlines()
         reader = csv.reader(lines)

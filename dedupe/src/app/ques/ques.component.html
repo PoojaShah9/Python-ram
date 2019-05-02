@@ -14,66 +14,76 @@
     <div *ngIf="showQuestions">
       <div class="panel panel-default" style="width: 100%">
         <div class="panel-heading"><b> Are the below record similar or not?</b></div>
-        <div class="panel-body"><table class="row-border hover table">
-          <thead>
-          <tr>
-            <th class="centre">Unique Id</th>
-            <th class="centre">Cntl ID</th>
-            <th class="centre">Enrollment ID </th>
-            <th class="centre">Provider Type</th>
-            <th class="centre">Provider Desc</th>
-            <th class="centre">State Cd</th>
-            <th class="centre">First Name</th>
-            <th class="centre">Middle Name</th>
-            <th class="centre">Last Name</th>
-            <th class="centre">Organisation Name</th>
-            <th class="centre">Gender</th>
-            <th class="centre">Address 1</th>
-            <th class="centre">Address 2</th>
-            <th class="centre">City</th>
-            <th class="centre">State</th>
-            <th class="centre">Zip</th>
-            <th class="centre">Zip cd</th>
-            <th class="centre">Phone no</th>
+        <div class="panel-body">
+          <div *ngIf="value.length > 0">
+          <table class="row-border hover table">
+            <thead>
+            <tr>
+              <th class="centre">Unique Id</th>
+              <th class="centre">Cntl ID</th>
+              <th class="centre">Enrollment ID</th>
+              <th class="centre">Provider Type</th>
+              <th class="centre">Provider Desc</th>
+              <th class="centre">State Cd</th>
+              <th class="centre">First Name</th>
+              <th class="centre">Middle Name</th>
+              <th class="centre">Last Name</th>
+              <th class="centre">Organisation Name</th>
+              <th class="centre">Gender</th>
+              <th class="centre">Address 1</th>
+              <th class="centre">Address 2</th>
+              <th class="centre">City</th>
+              <th class="centre">State</th>
+              <th class="centre">Zip</th>
+              <th class="centre">Zip cd</th>
+              <th class="centre">Phone no</th>
 
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let b of value">
-            <td>{{b.unique_id}}</td>
-            <td>{{b.PECOS_ASCT_CNTL_ID}}</td>
-            <td>{{b.ENRLMT_ID}}</td>
-            <td>{{b.PROVIDER_TYPE_CD}}</td>
-            <td>{{b.PROVIDER_TYPE_DESC}}</td>
-            <td>{{b.STATE_CD}}</td>
-            <td>{{b.FIRST_NAME }}</td>
-            <td>{{b.MDL_NAME}}</td>
-            <td>{{b.LAST_NAME}}</td>
-            <td>{{b.ORG_NAME}}</td>
-            <td>{{b.GNDR_SW}}</td>
-            <td>{{b.PRVDR_ADR_LINE_1_TXT}}</td>
-            <td>{{b.PRVDR_ADR_LINE_2_TXT}}</td>
-            <td>{{b.PRVDR_ADR_CITY_NAME}}</td>
-            <td>{{b.PRVDR_ADR_STATE_CD}}</td>
-            <td>{{b.PRVDR_ADR_ZIP_CD}}</td>
-            <td>{{b.PRVDR_ADR_ZIP_PLUS_4_CD}}</td>
-            <td>{{b.TEL_NUM}}</td>
-          </tr>
-          </tbody>
-        </table></div>
-        <div class="panel-footer"><button class="btn btn-primary" (click)="setAnswer('y',value)">Yes</button>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let b of value">
+              <td>{{b.unique_id}}</td>
+              <td>{{b.PECOS_ASCT_CNTL_ID}}</td>
+              <td>{{b.ENRLMT_ID}}</td>
+              <td>{{b.PROVIDER_TYPE_CD}}</td>
+              <td>{{b.PROVIDER_TYPE_DESC}}</td>
+              <td>{{b.STATE_CD}}</td>
+              <td>{{b.FIRST_NAME }}</td>
+              <td>{{b.MDL_NAME}}</td>
+              <td>{{b.LAST_NAME}}</td>
+              <td>{{b.ORG_NAME}}</td>
+              <td>{{b.GNDR_SW}}</td>
+              <td>{{b.PRVDR_ADR_LINE_1_TXT}}</td>
+              <td>{{b.PRVDR_ADR_LINE_2_TXT}}</td>
+              <td>{{b.PRVDR_ADR_CITY_NAME}}</td>
+              <td>{{b.PRVDR_ADR_STATE_CD}}</td>
+              <td>{{b.PRVDR_ADR_ZIP_CD}}</td>
+              <td>{{b.PRVDR_ADR_ZIP_PLUS_4_CD}}</td>
+              <td>{{b.TEL_NUM}}</td>
+            </tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="text-center" *ngIf="value.length == 0">
+            <h4>Its take some time to get questions..</h4>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-primary" (click)="setAnswer('y',value)">Yes</button>
           <button class="btn btn-danger" (click)="setAnswer('n',value)">No</button>
-          <button class="btn btn-info" (click)="setAnswer('na',value)">Not Sure</button></div>
+          <button class="btn btn-info" (click)="setAnswer('na',value)">Not Sure</button>
+        </div>
       </div>
     </div>
     <div *ngIf="!showQuestions">
+      <div *ngIf="finaldata.length > 0">
       <table class="table">
         <tr>
           <th>cluster_id</th>
           <th>confidence_score</th>
           <th>unique_id</th>
           <th>Cntl ID</th>
-          <th>Enrollment ID </th>
+          <th>Enrollment ID</th>
           <th>Provider Type</th>
           <th>Provider Desc</th>
           <th>State Cd</th>
@@ -113,6 +123,10 @@
           <td>{{a["TEL_NUM"]}}</td>
         </tr>
       </table>
+      </div>
+      <div class="text-center" *ngIf="value.length == 0">
+        <h4>Its take some time to upload and create PARQUET file... aftere 10-15 min go and check s3 bucket</h4>
+      </div>
     </div>
   </section>
 </div>

@@ -2,53 +2,58 @@
 
 <div>
   <section class="ourservices" style="padding:50px;">
-<h3>Main Data</h3>
+    <h3>Main Data</h3>
     <button class="btn btn-primary" [routerLink]="['/ques']">Remove Duplicate</button>
-<table style="width: 100%;" class="table">
-  <thead>
-  <tr class="text-centre">
-    <th>No</th>
-    <th>Cntl ID</th>
-    <th >Enrollment ID </th>
-    <th >Provider Type</th>
-    <th >Provider Desc</th>
-    <th >State Cd</th>
-    <th >First Name</th>
-    <th >Middle Name</th>
-    <th >Last Name</th>
-    <th >Organisation Name</th>
-    <th >Gender</th>
-    <th>Address 1</th>
-    <th>Address 2</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Zip cd</th>
-    <th>Phone no</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let a of datas; let i = index;">
-    <td>{{i + 1}}</td>
-    <td>{{a.PECOS_ASCT_CNTL_ID}}</td>
-    <td>{{a.ENRLMT_ID}}</td>
-    <td>{{a.PROVIDER_TYPE_CD}}</td>
-    <td>{{a.PROVIDER_TYPE_DESC}}</td>
-    <td>{{a.STATE_CD}}</td>
-    <td>{{a.FIRST_NAME }}</td>
-    <td>{{a.MDL_NAME}}</td>
-    <td>{{a.LAST_NAME}}</td>
-    <td>{{a.ORG_NAME}}</td>
-    <td>{{a.GNDR_SW}}</td>
-    <td>{{a.PRVDR_ADR_LINE_1_TXT}}</td>
-    <td>{{a.PRVDR_ADR_LINE_2_TXT}}</td>
-    <td>{{a.PRVDR_ADR_CITY_NAME}}</td>
-    <td>{{a.PRVDR_ADR_STATE_CD}}</td>
-    <td>{{a.PRVDR_ADR_ZIP_CD}}</td>
-    <td>{{a.PRVDR_ADR_ZIP_PLUS_4_CD}}</td>
-    <td>{{a.TEL_NUM}}</td>
-  </tr>
-  </tbody>
-</table>
+    <div *ngIf="datas.length > 0">
+      <table style="width: 100%;" class="table">
+        <thead>
+        <tr class="text-centre">
+          <th>No</th>
+          <th>Cntl ID</th>
+          <th>Enrollment ID</th>
+          <th>Provider Type</th>
+          <th>Provider Desc</th>
+          <th>State Cd</th>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>Organisation Name</th>
+          <th>Gender</th>
+          <th>Address 1</th>
+          <th>Address 2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Zip cd</th>
+          <th>Phone no</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let a of datas; let i = index;">
+          <td>{{i + 1}}</td>
+          <td>{{a.PECOS_ASCT_CNTL_ID}}</td>
+          <td>{{a.ENRLMT_ID}}</td>
+          <td>{{a.PROVIDER_TYPE_CD}}</td>
+          <td>{{a.PROVIDER_TYPE_DESC}}</td>
+          <td>{{a.STATE_CD}}</td>
+          <td>{{a.FIRST_NAME }}</td>
+          <td>{{a.MDL_NAME}}</td>
+          <td>{{a.LAST_NAME}}</td>
+          <td>{{a.ORG_NAME}}</td>
+          <td>{{a.GNDR_SW}}</td>
+          <td>{{a.PRVDR_ADR_LINE_1_TXT}}</td>
+          <td>{{a.PRVDR_ADR_LINE_2_TXT}}</td>
+          <td>{{a.PRVDR_ADR_CITY_NAME}}</td>
+          <td>{{a.PRVDR_ADR_STATE_CD}}</td>
+          <td>{{a.PRVDR_ADR_ZIP_CD}}</td>
+          <td>{{a.PRVDR_ADR_ZIP_PLUS_4_CD}}</td>
+          <td>{{a.TEL_NUM}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center" *ngIf="datas.length == 0">
+      <h4>Data Loading.....</h4>
+    </div>
   </section>
 </div>

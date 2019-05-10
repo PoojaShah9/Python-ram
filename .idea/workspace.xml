@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3390c15-05a2-477a-8320-005443fd5662" name="Default Changelist" comment="" />
+    <list default="true" id="c3390c15-05a2-477a-8320-005443fd5662" name="Default Changelist" comment="Final server changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dedupe/server/input.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dedupe/server/inputfile/input.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dedupe/server/restaurant-nophone-training.csv" beforeDir="false" />
+    </list>
+    <list id="4ed45b93-1396-4764-9f72-7e1d306a37f3" name="add new file" comment="by mistake" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -11,107 +17,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-412010854">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="ts" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="TypeScript" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="56" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="56" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dedupe/server/index.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="93" column="31" lean-forward="true" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dedupe/server/controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="179" column="41" lean-forward="true" selection-start-line="179" selection-start-column="17" selection-end-line="179" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dedupe/src/app/ques/ques.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dedupe/src/app/ques/ques.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-              <folding>
-                <element signature="n#style#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.spec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#73#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dedupe/node_modules/@angular/core/testing/src/test_bed.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#203#301#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dedupe/src/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <entry file="file://$PROJECT_DIR$/dedupe/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -119,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dedupe/src/app/table.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+            <state relative-caret-position="165">
+              <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -132,13 +63,46 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sty</find>
-      <find>styles</find>
-      <find>tr</find>
+      <find>filename</find>
+      <find>inputfile/input.csv</find>
       <find>input_file</find>
+      <find>MDL_NAME</find>
+      <find>es</find>
+      <find>sample</find>
+      <find>readData</find>
+      <find>, 'has missing':True</find>
+      <find>, 'type': 'String'</find>
+      <find>100</find>
+      <find>cluster_id</find>
+      <find>print</find>
+      <find>example4</find>
+      <find>deduper</find>
+      <find>Excat</find>
+      <find>import pandas as pd</find>
+      <find>Exact</find>
+      <find>numpy</find>
+      <find>ShortString</find>
+      <find>bucket</find>
+      <find>data_d</find>
+      <find>null</find>
+      <find>inputfile</find>
+      <find>input</find>
+      <find>host</find>
+      <find>DirectCSC</find>
+      <find>input.csv</find>
+      <find>table</find>
+      <find>newDataD</find>
+      <find>jsonify</find>
     </findStrings>
     <replaceStrings>
       <replace>th</replace>
+      <replace>type</replace>
+      <replace>99</replace>
+      <replace>Excat</replace>
+      <replace>ShortString</replace>
+      <replace>example5</replace>
+      <replace>Exact</replace>
+      <replace>''</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -163,28 +127,24 @@
         <option value="$PROJECT_DIR$/dedupe/angular.json" />
         <option value="$PROJECT_DIR$/dedupe/src/index.html" />
         <option value="$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.ts" />
-        <option value="$PROJECT_DIR$/dedupe/src/app/table.service.ts" />
         <option value="$PROJECT_DIR$/dedupe/src/app/ques/ques.component.ts" />
-        <option value="$PROJECT_DIR$/dedupe/src/app/ques/ques.component.html" />
-        <option value="$PROJECT_DIR$/dedupe/server/index.py" />
-        <option value="$PROJECT_DIR$/dedupe/server/controller.py" />
         <option value="$PROJECT_DIR$/dedupe/src/start.sh" />
         <option value="$PROJECT_DIR$/dedupe/package.json" />
+        <option value="$PROJECT_DIR$/dedupe/server/myTest_training.json" />
+        <option value="$PROJECT_DIR$/dedupe/server/index.py" />
+        <option value="$PROJECT_DIR$/dedupe/server/controller.py" />
         <option value="$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.html" />
+        <option value="$PROJECT_DIR$/dedupe/src/app/table.service.ts" />
+        <option value="$PROJECT_DIR$/dedupe/src/app/ques/ques.component.html" />
+        <option value="$PROJECT_DIR$/dedupe/README.md" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="53" />
-    <option name="y" value="25" />
-    <option name="width" value="1313" />
-    <option name="height" value="743" />
+    <option name="y" value="27" />
+    <option name="width" value="650" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -204,27 +164,6 @@
               <item name="Python-ram" type="462c0819:PsiDirectoryNode" />
               <item name="dedupe" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Python-ram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-ram" type="462c0819:PsiDirectoryNode" />
-              <item name="dedupe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python-ram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-ram" type="462c0819:PsiDirectoryNode" />
-              <item name="dedupe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python-ram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-ram" type="462c0819:PsiDirectoryNode" />
-              <item name="dedupe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="table-list" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -234,7 +173,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="table-list&#9;FILE&#9;file://E:/Pooja/Python-ram/dedupe/src/app/table-list/table-list.component.ts&#10;main.ts&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/main.ts&#10;table&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/table-list/table-list.component.html&#10;app.m&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;angu&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/angular.json&#10;table.service&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/table.service.ts&#10;app.&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;app&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;angular.js&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/angular.json&#10;package.js&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/package.json&#10;package.json&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="main.ts&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/main.ts&#10;table&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/table-list/table-list.component.html&#10;app.m&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;angu&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/angular.json&#10;table.service&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/table.service.ts&#10;app.&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;app&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/src/app/app.module.ts&#10;angular.js&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/angular.json&#10;package.js&#9;FILE&#9;file://E:/Pooja/dedupe/dedupe/package.json&#10;package.json&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -247,7 +186,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.1.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/dedupe/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -276,6 +215,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c3390c15-05a2-477a-8320-005443fd5662" name="Default Changelist" comment="" />
+      <changelist id="4ed45b93-1396-4764-9f72-7e1d306a37f3" name="add new file" comment="by mistake" />
       <created>1553930278166</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -289,7 +229,44 @@
       <workItem from="1554715144419" duration="237000" />
       <workItem from="1554716446128" duration="6460000" />
       <workItem from="1555137206955" duration="5727000" />
-      <workItem from="1555304291309" duration="3697000" />
+      <workItem from="1555304291309" duration="6275000" />
+      <workItem from="1555327148705" duration="2783000" />
+      <workItem from="1555390163623" duration="4287000" />
+      <workItem from="1555573944108" duration="5603000" />
+      <workItem from="1555744194326" duration="1480000" />
+      <workItem from="1556081790218" duration="7245000" />
+      <workItem from="1556169187485" duration="1394000" />
+      <workItem from="1556171567103" duration="265000" />
+      <workItem from="1556171965439" duration="3519000" />
+      <workItem from="1556177943825" duration="5536000" />
+      <workItem from="1556190127957" duration="8090000" />
+      <workItem from="1556253799683" duration="3688000" />
+      <workItem from="1556261864469" duration="3795000" />
+      <workItem from="1556272519649" duration="8166000" />
+      <workItem from="1556341314547" duration="8689000" />
+      <workItem from="1556350776409" duration="2436000" />
+      <workItem from="1556513703579" duration="4522000" />
+      <workItem from="1556541880500" duration="2366000" />
+      <workItem from="1556600348277" duration="813000" />
+      <workItem from="1556602391098" duration="1346000" />
+      <workItem from="1556604095475" duration="3374000" />
+      <workItem from="1556607972581" duration="622000" />
+      <workItem from="1556609336649" duration="5827000" />
+      <workItem from="1556618555161" duration="599000" />
+      <workItem from="1556621915274" duration="277000" />
+      <workItem from="1556623488181" duration="243000" />
+      <workItem from="1556623980374" duration="4662000" />
+      <workItem from="1556686845446" duration="290000" />
+      <workItem from="1556687448359" duration="3881000" />
+      <workItem from="1556715596913" duration="831000" />
+      <workItem from="1556777765202" duration="1256000" />
+      <workItem from="1556779319579" duration="1010000" />
+      <workItem from="1556782259524" duration="2661000" />
+      <workItem from="1556791089256" duration="1471000" />
+      <workItem from="1556798945522" duration="1505000" />
+      <workItem from="1556800629595" duration="959000" />
+      <workItem from="1556886157573" duration="941000" />
+      <workItem from="1557479193575" duration="9540000" />
     </task>
     <task id="LOCAL-00001" summary="Start script for angular">
       <created>1555305688004</created>
@@ -298,17 +275,221 @@
       <option name="project" value="LOCAL" />
       <updated>1555305688010</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="UI Endpoint Change">
+      <created>1555325985489</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555325985489</updated>
+    </task>
+    <task id="LOCAL-00003" summary="synchronize call">
+      <created>1555332676634</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555332676634</updated>
+    </task>
+    <task id="LOCAL-00004" summary="synchronize call chng">
+      <created>1555333017423</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555333017423</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change server code for removing code which create new file in server">
+      <created>1555584454947</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555584454947</updated>
+    </task>
+    <task id="LOCAL-00006" summary="minor changes">
+      <created>1555585220111</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555585220111</updated>
+    </task>
+    <task id="LOCAL-00007" summary="remove space from controller">
+      <created>1555585958907</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555585958907</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add s3 connection">
+      <created>1555586249816</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555586249816</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add package">
+      <created>1555587049503</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1555587049503</updated>
+    </task>
+    <task id="LOCAL-00010" summary="changes in server">
+      <created>1556186032334</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556186032334</updated>
+    </task>
+    <task id="LOCAL-00011" summary="minor fix in server">
+      <created>1556198306353</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556198306354</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Final server changes for 2000 data">
+      <created>1556352511833</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556352511833</updated>
+    </task>
+    <task id="LOCAL-00013" summary="index file">
+      <created>1556352670859</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556352670859</updated>
+    </task>
+    <task id="LOCAL-00014" summary="minor change in server">
+      <created>1556521477002</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556521477002</updated>
+    </task>
+    <task id="LOCAL-00015" summary="some change">
+      <created>1556624359138</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556624359138</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add new file">
+      <created>1556624893140</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556624893140</updated>
+    </task>
+    <task id="LOCAL-00017" summary="some change for read file">
+      <created>1556625182516</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556625182516</updated>
+    </task>
+    <task id="LOCAL-00018" summary="minor change">
+      <created>1556625732540</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1556625732540</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ip change">
+      <created>1556626886670</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1556626886670</updated>
+    </task>
+    <task id="LOCAL-00020" summary="remove elasticsearch">
+      <created>1556630288030</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1556630288030</updated>
+    </task>
+    <task id="LOCAL-00021" summary="change for parquet">
+      <created>1556689919710</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1556689919710</updated>
+    </task>
+    <task id="LOCAL-00022" summary="added low_memory=False">
+      <created>1556690945900</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556690945900</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix minor bug">
+      <created>1556691872294</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556691872294</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Ip change">
+      <created>1556715974087</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1556715974087</updated>
+    </task>
+    <task id="LOCAL-00025" summary="html update">
+      <created>1556800689296</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1556800689296</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fix html">
+      <created>1556801120878</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1556801120878</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64971000" />
+    <option name="totallyTimeSpent" value="183224000" />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="53" y="25" width="1313" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24917382" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.023255814" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6612378" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TypeScript" order="6" weight="0.32736155" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32899022" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4992248" weight="0.48045602" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007752" side_tool="true" weight="0.5179153" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.4992248" visible="true" weight="0.08957655" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -318,15 +499,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.47882736" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.048158642" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.46033993" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -356,10 +537,48 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start script for angular" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start script for angular" />
+    <MESSAGE value="UI Endpoint Change" />
+    <MESSAGE value="synchronize call" />
+    <MESSAGE value="synchronize call chng" />
+    <MESSAGE value="change server code for removing code which create new file in server" />
+    <MESSAGE value="minor changes" />
+    <MESSAGE value="remove space from controller" />
+    <MESSAGE value="add s3 connection" />
+    <MESSAGE value="add package" />
+    <MESSAGE value="changes in server" />
+    <MESSAGE value="minor fix in server" />
+    <MESSAGE value="Final server changes for 2000 data" />
+    <MESSAGE value="index file" />
+    <MESSAGE value="minor change in server" />
+    <MESSAGE value="some change" />
+    <MESSAGE value="add new file" />
+    <MESSAGE value="some change for read file" />
+    <MESSAGE value="minor change" />
+    <MESSAGE value="ip change" />
+    <MESSAGE value="remove elasticsearch" />
+    <MESSAGE value="change for parquet" />
+    <MESSAGE value="added low_memory=False" />
+    <MESSAGE value="fix minor bug" />
+    <MESSAGE value="Ip change" />
+    <MESSAGE value="html update" />
+    <MESSAGE value="fix html" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix html" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dedupe/node_modules/ng2-smart-table/ng2-smart-table.component.html" />
@@ -447,27 +666,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dedupe/src/assets/json/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="5" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/src/app/table.service.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/src/app/ques/ques.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -480,36 +689,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dedupe/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/src/app/ques/ques.component.html">
+    <entry file="file://$PROJECT_DIR$/dedupe/server/inputfile/input.csv" />
+    <entry file="file://$PROJECT_DIR$/dedupe/src/app/table.service.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+        <state relative-caret-position="150">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="n#style#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/server/inputfile/input.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/server/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/server/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -524,44 +716,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
           <folding>
-            <element signature="e#0#73#0" expanded="true" />
+            <element signature="n#!!block;n#dependencies#0;n#!!top" />
+            <element signature="n#!!block;n#devDependencies#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.ts">
+    <entry file="file://$PROJECT_DIR$/dedupe/node_modules/ng4-loading-spinner/ng4LoadingSpinner.service.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="-120">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/server/OPexample4.csv" />
+    <entry file="file://$PROJECT_DIR$/dedupe/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/server/output.parquet" />
+    <entry file="file://$PROJECT_DIR$/dedupe/server/OPexample5.csv" />
+    <entry file="file://$PROJECT_DIR$/dedupe/server/myTest_training.json" />
+    <entry file="file://$PROJECT_DIR$/dedupe/server/input.csv" />
+    <entry file="file://$PROJECT_DIR$/dedupe/dist/dedupe/main.js" />
+    <entry file="file://$PROJECT_DIR$/dedupe/dist/dedupe/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/src/app/ques/ques.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dedupe/src/app/table.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        <state relative-caret-position="165">
+          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/src/app/ques/ques.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dedupe/src/app/table-list/table-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="426">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#section#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/server/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="179" column="41" lean-forward="true" selection-start-line="179" selection-start-column="17" selection-end-line="179" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/server/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="93" column="31" lean-forward="true" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dedupe/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
